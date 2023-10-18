@@ -31,6 +31,48 @@
 
     <?php
 
+        if(isset($_POST['submit'])) {
+            $naam = htmlspecialchars($_POST['naam']);
+            $achternaam = htmlspecialchars($_POST['achternaam']);
+            $adres = htmlspecialchars($_POST['adres']);
+            $postcode = htmlspecialchars($_POST['postcode']);
+            $land = htmlspecialchars($_POST['land']);
+            $email = htmlspecialchars($_POST['email']);
+            $geboortedatum = htmlspecialchars($_POST['geboortedatum']);
+
+            $naampattern = "/[A-Z][a-z]{1,25}/";
+                if(!preg_match($naampattern, $naam)) {
+                    echo "fout" . "<br>";
+                    }
+                    
+            $achternaampattern = "/[A-Z]?[a-z]{1,30}/";
+                if(!preg_match($achternaampattern, $achternaam)) {
+                    echo "fout" . "<br>";
+                    }
+
+            $adrespattern = "/[A-Z][a-z]{1,30}\s[A-z]{0,2}[1,9][0,1,2,3,4,5,6,7,8,9]{1,2}/";
+                if(!preg_match($adrespattern, $adres)) {
+                    echo "fout" . "<br>";
+                    }
+
+            $postcodepattern = "/[1-9][0-9]{3}\s?(?!SS|ss|SA|sa|SD|sa)[A-z]{2}/";
+                if(!preg_match($postcodepattern, $postcode)) {
+                    echo "fout" . "<br>";
+                    }
+
+             $landpattern = "/[A-Z][a-z]{1,56}/";
+                if(!preg_match($landpattern, $land)) {
+                    echo "fout" . "<br>";
+                    }
+
+            $emailpattern = "/[a-z0-9]{1,64}@[a-z0-9]*.[a-z]{1,3}/";
+                if(!preg_match($emailpattern, $email)) {
+                    echo "fout" . "<br>";
+                    }
+                    
+
+            
+        }
                 
 //naar de server sturen
         
@@ -89,7 +131,7 @@
                 preg_match($landpattern, $land) &&
                 preg_match($emailpattern, $email)
             ) {
-                // Validation passed, insert data into the database
+
                 $sql = "INSERT INTO opdracht (naam, achternaam, adres, postcode, land, email, geboortedatum) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 
                 $stmt = $conn->prepare($sql);
@@ -108,7 +150,7 @@
                     echo "Error: " . $conn->error;
                 }
             } else {
-                // Validation failed, do not insert data
+
                 echo "Validation failed. Data not inserted.";
             }
         }
