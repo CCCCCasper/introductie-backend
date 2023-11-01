@@ -1,0 +1,61 @@
+body {
+    background-color: green;
+}
+
+#menu {
+    height: 70px;
+    width: 98%;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 1%; 
+    background-color: rgb(200, 200, 200, 0.8);
+}
+
+.library {
+    height: 40px;
+    width: 10%;
+    border: 2px solid rgb(60, 60, 60);
+    position: relative;
+    margin-top: 13px;
+    float: right;
+    margin-right: 13px;
+    background-color: rgb(60, 60, 60);
+}
+
+.library p {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    padding-top: 6px;
+    font-size: 150%;
+    color: rgb(209, 209, 0);
+    font-family: "Rockwell", Georgia, serif;
+}
+
+#container {
+    height: 630px;
+    width: 98%;
+    position: relative;
+    margin: 0 auto;
+    background-color: rgb(128, 128, 128, 0.8);
+}
+
+.info {
+    position: relative;
+    font-size: 200%;
+    margin-left: 25%;
+    margin-top: 5%;
+    float: left;
+
+}
+
+.afbeelding {
+    height: 240px;
+    width: 300px;
+    position: absolute;
+    font-family: 'Inter';
+    margin-left: 175%;
+    background-color: rgb(128, 128, 128, 0.8);
+    border: 0px solid black;
+
+}
