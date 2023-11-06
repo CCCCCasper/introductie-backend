@@ -49,13 +49,25 @@ body {
 
 }
 
-.afbeelding {
-    height: 240px;
-    width: 300px;
+.picture {
+    height: 300px;
+    width: 224px;
     position: absolute;
     font-family: 'Inter';
     margin-left: 175%;
     background-color: rgb(128, 128, 128, 0.8);
     border: 0px solid black;
+    
+
+}
+
+.afbeelding [type='file'] {
+    display: none;
+}
+
+.picture [src=""] {
+    height: 300px;
+    width: 224px;
+    font-size: 100% 100%;
 
 }
