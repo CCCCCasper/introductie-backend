@@ -11,42 +11,54 @@
     </div>
 
     <div id="container">
-        <div id class="info"><form method="POST">
+        <div id class="info">
+            <form method="POST" action="uploadAndInsert.php" enctype="multipart/form-data">
 
-        <label for="customFileInput" class="custom-file-input">
-            <div id class="afbeelding"><input type="file" id="customFileInput" class="afbeelding" name="afbeelding" accept="image/*" required></div>
+                <label for="customFileInput" class="custom-file-input">
+                <div id class="afbeelding"><input type="file" id="customFileInput" class="afbeelding" name="afbeelding" accept="image/*" required></div>
 
-            <div id="image-frame">
-            <div id class="picture"><img id="selected-image" src="" alt=""></div>
-    </div>
+                <div id="image-frame">
+                    <div id class="picture"><img id="selected-image" src="" alt=""></div>
+                </div>
 
-    <script>
-        document.getElementById('customFileInput').addEventListener('change', function () {
-            const selectedImage = document.getElementById('selected-image');
-            const fileInput = this;
+                <script>
+                    document.getElementById('customFileInput').addEventListener('change', function () {
+                        const selectedImage = document.getElementById('selected-image');
+                        const fileInput = this;
 
-            if (fileInput.files && fileInput.files[0]) {
-            const reader = new FileReader();
+                        if (fileInput.files && fileInput.files[0]) {
+                        const reader = new FileReader();
 
-                reader.onload = function (e) {
-                    selectedImage.src = e.target.result;
-                };
+                            reader.onload = function (e) {
+                        selectedImage.src = e.target.result;
+                            };
 
-                reader.readAsDataURL(fileInput.files[0]);
-                }
-                });
-    </script>
-        </label>
+                            reader.readAsDataURL(fileInput.files[0]);
+                            }
+                            });
+                </script>
 
-            <label for='naam'>Naam: </label>
-            <input type='text' name='naam' required><br>
+                </label>
 
-            <label for='release'>Release: </label>
-            <input type='date' name='release'><br>
+                    <label for='title'>Title: </label>
+                    <input type='text' name='title' required><br>
 
-            <input type='submit' name='submit' value='submit'>
+                    <label for='developer'>Developer: </label>
+                    <input type='text' name='developer' required><br>
+
+                    <label for='publisher'>Publisher: </label>
+                    <input type='text' name='publisher' required><br>
+
+                    <label for='releasedate'>Releasedate: </label>
+                    <input type='date' name='releasedate'><br>
+
+                    <label for='description'>Description: </label>
+                    <input type='text' name='description' required><br>
+
+                    <div id class="submit"><input type='submit' name='submit' value='submit'></div>
+                
+            </form>
         </div>
-    </form>
     </div>
 
 </body>

@@ -11,18 +11,7 @@
     </div>
 
     <div id="container">
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
-        <div id class="games"></div>
+        <?php include 'selectImages.php'; ?>
     </div>
 
 </body>

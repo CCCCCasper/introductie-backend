@@ -47,3 +47,8 @@ body {
     margin: 10px 0px 0px 21px;
     float: left;
 }
+
+.game-image {
+    width: 224px; /* Adjust the desired width */
+    height: 300px; /* Adjust the desired height */
+} 
