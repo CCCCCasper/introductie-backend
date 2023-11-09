@@ -40,20 +40,15 @@
 
                 </label>
 
-                    <label for='title'>Title: </label>
-                    <input type='text' name='title' required><br>
+                    <div id class="title"><input type='text' name='title' placeholder='Title...' required><br></div>
 
-                    <label for='developer'>Developer: </label>
-                    <input type='text' name='developer' required><br>
+                    <div id class="developer"><input type='text' name='developer' placeholder='Devloper...' required><br></div>
 
-                    <label for='publisher'>Publisher: </label>
-                    <input type='text' name='publisher' required><br>
+                    <div id class="publisher"><input type='text' name='publisher' placeholder='Publisher...' required><br></div>
 
-                    <label for='releasedate'>Releasedate: </label>
-                    <input type='date' name='releasedate'><br>
+                    <div id class="releasedate"><input type='date' name='releasedate'><br></div>
 
-                    <label for='description'>Description: </label>
-                    <input type='text' name='description' required><br>
+                    <div id class="description"><input type='text' name='description' placeholder='Description...' required><br></div>
 
                     <div id class="submit"><input type='submit' name='submit' value='submit'></div>
                 

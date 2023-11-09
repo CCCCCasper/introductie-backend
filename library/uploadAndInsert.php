@@ -20,10 +20,10 @@ if(isset($_POST['submit'])) {
     }
 
     // Check if file already exists
-    // if (file_exists($target_file)) {
-    // echo "Sorry, file already exists.";
-    // $uploadOk = 0;
-    // }
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
 
     // Check file size
     if ($_FILES["afbeelding"]["size"] > 5000000) {
@@ -51,10 +51,10 @@ if(isset($_POST['submit'])) {
     }
 
     $title = $_POST['title'];
-    $developer = $_post['developer'];
-    $publisher = $_post['publisher'];
+    $developer = $_POST['developer'];
+    $publisher = $_POST['publisher'];
     $releasedate = $_POST['releasedate'];
-    $description = $_post['description'];
+    $description = $_POST['description'];
     $gameImage = $_FILES["afbeelding"]['name'];
 
     
