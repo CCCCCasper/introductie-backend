@@ -1,0 +1,9 @@
+.interactive-image {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Add a style for the hover effect */
+.interactive-image:hover {
+    transform: scale(1.1);
+}
