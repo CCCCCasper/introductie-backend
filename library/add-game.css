@@ -60,6 +60,12 @@ body {
 
 }
 
+.picture [alt="upload file:"] {
+    position: absolute;
+    text-align: center;
+
+}
+
 .afbeelding [type='file'] {
     display: none;
 }

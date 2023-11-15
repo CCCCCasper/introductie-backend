@@ -73,3 +73,231 @@ body {
     width: 224px; /* Adjust the desired width */
     height: 300px; /* Adjust the desired height */
 } 
+
+@media screen and (max-width: 1360px) {
+
+    #menu {
+        height: 70px;
+        width: 98%;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 1%; 
+        background-color: rgb(200, 200, 200, 0.8);
+    }
+    
+    .toevoegen {
+        height: 40px;
+        width: 100px;
+        border: 2px solid rgb(60, 60, 60);
+        position: relative;
+        margin-top: 13px;
+        float: right;
+        margin-right: 13px;
+        background-color: rgb(60, 60, 60);
+    }
+    
+    .toevoegen p {
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding-top: 6px;
+        font-size: 110%;
+        color: rgb(209, 209, 0);
+        font-family: "Rockwell", Georgia, serif;
+    }
+
+    .edit {
+        height: 40px;
+        width: 100px;
+        border: 2px solid rgb(60, 60, 60);
+        position: relative;
+        margin-top: 13px;
+        float: right;
+        margin-right: 13px;
+        background-color: rgb(60, 60, 60);
+    }
+    
+    .edit p {
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding-top: 6px;
+        font-size: 110%;
+        color: rgb(209, 209, 0);
+        font-family: "Rockwell", Georgia, serif;
+    }
+
+    .games {
+        height: 300px;
+        width: 15%;
+        background-color: white;
+        margin: 10px 0px 0px 21px;
+        float: left;
+        margin: 0 auto;
+    }
+    
+    .game-image {
+        width: 100%;
+        height: 300px;
+    } 
+
+    #container {
+        height: 630px;
+        max-width: 1000px;
+        position: relative;
+        margin: 0 auto;
+        background-color: rgb(128, 128, 128, 0.8);
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+
+    #menu {
+        height: 70px;
+        width: 98%;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 1%; 
+        background-color: rgb(200, 200, 200, 0.8);
+    }
+    
+    .toevoegen {
+        height: 40px;
+        width: 100px;
+        border: 2px solid rgb(60, 60, 60);
+        position: relative;
+        margin-top: 13px;
+        float: right;
+        margin-right: 13px;
+        background-color: rgb(60, 60, 60);
+    }
+    
+    .toevoegen p {
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding-top: 6px;
+        font-size: 110%;
+        color: rgb(209, 209, 0);
+        font-family: "Rockwell", Georgia, serif;
+    }
+
+    .edit {
+        height: 40px;
+        width: 100px;
+        border: 2px solid rgb(60, 60, 60);
+        position: relative;
+        margin-top: 13px;
+        float: right;
+        margin-right: 13px;
+        background-color: rgb(60, 60, 60);
+    }
+    
+    .edit p {
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding-top: 6px;
+        font-size: 110%;
+        color: rgb(209, 209, 0);
+        font-family: "Rockwell", Georgia, serif;
+    }
+
+    .games {
+        height: 300px;
+        width: 25%;
+        background-color: white;
+        margin: 10px 0px 0px 21px;
+        float: left;
+        margin: 0 auto;
+    }
+    
+    .game-image {
+        width: 100%;
+        height: 300px;
+    } 
+
+    #container {
+        height: 630px;
+        max-width: 1000px;
+        position: relative;
+        margin: 0 auto;
+        background-color: rgb(128, 128, 128, 0.8);
+    }
+  }
+
+  @media screen and (max-width: 450.4px) {
+
+    #menu {
+        height: 70px;
+        width: 98%;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 1%; 
+        background-color: rgb(200, 200, 200, 0.8);
+    }
+    
+    .toevoegen {
+        height: 40px;
+        width: 100px;
+        border: 2px solid rgb(60, 60, 60);
+        position: relative;
+        margin-top: 13px;
+        float: right;
+        margin-right: 13px;
+        background-color: rgb(60, 60, 60);
+    }
+    
+    .toevoegen p {
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding-top: 6px;
+        font-size: 110%;
+        color: rgb(209, 209, 0);
+        font-family: "Rockwell", Georgia, serif;
+    }
+
+    .edit {
+        height: 40px;
+        width: 100px;
+        border: 2px solid rgb(60, 60, 60);
+        position: relative;
+        margin-top: 13px;
+        float: right;
+        margin-right: 13px;
+        background-color: rgb(60, 60, 60);
+    }
+    
+    .edit p {
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding-top: 6px;
+        font-size: 110%;
+        color: rgb(209, 209, 0);
+        font-family: "Rockwell", Georgia, serif;
+    }
+
+    .games {
+        height: 300px;
+        width: 50%;
+        background-color: white;
+        margin: 10px 0px 0px 21px;
+        float: left;
+        margin: 0 auto;
+    }
+    
+    .game-image {
+        width: 100%;
+        height: 300px;
+    } 
+
+    #container {
+        height: 630px;
+        max-width: 1000px;
+        position: relative;
+        margin: 0 auto;
+        background-color: rgb(128, 128, 128, 0.8);
+    }
+  }

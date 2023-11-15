@@ -10,7 +10,7 @@
         while($row = $result->fetch_assoc()) {
 
             
-            echo "<div id class='games'><img class='game-image' src='uploads/".$row['gameimage']."'></div>";
+            echo "<a href='edit-game.php?id=".$row['id']."'><div id class='games'><img class='game-image' src='uploads/".$row['gameimage']."'></div></a>";
         }
     } else {
         echo "0 results";

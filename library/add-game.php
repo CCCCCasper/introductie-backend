@@ -18,7 +18,7 @@
                 <div id class="afbeelding"><input type="file" id="customFileInput" class="afbeelding" name="afbeelding" accept="image/*" required></div>
 
                 <div id="image-frame">
-                    <div id class="picture"><img id="selected-image" src="" alt=""></div>
+                    <div id class="picture"><img id="selected-image" src="" alt="upload file:"></div>
                 </div>
 
                 <script>
