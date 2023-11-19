@@ -46,7 +46,6 @@ body {
     margin-left: 32%;
     margin-top: 5%;
     float: left;
-
 }
 
 .picture {
@@ -57,13 +56,11 @@ body {
     margin-left: 110%;
     background-color: rgb(128, 128, 128, 0.8);
     border: 0px solid black;
-
 }
 
 .picture [alt="upload file:"] {
     position: absolute;
     text-align: center;
-
 }
 
 .afbeelding [type='file'] {
@@ -74,7 +71,6 @@ body {
     height: 300px;
     width: 224px;
     font-size: 100% 100%;
-
 }
 
 img#selected-image {
