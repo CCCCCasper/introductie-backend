@@ -1,5 +1,12 @@
 body {
-    background-color: green;
+    background-color: rgb(40, 40, 40);
+    background-image: url('fotos/1.jpg');
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
 }
 
 #menu {
@@ -8,7 +15,7 @@ body {
     position: relative;
     margin: 0 auto;
     margin-top: 1%; 
-    background-color: rgb(200, 200, 200, 0.8);
+    background-color: rgb(50, 50, 50, 0.9);
 }
 
 .toevoegen {
@@ -22,34 +29,17 @@ body {
     background-color: rgb(60, 60, 60);
 }
 
+.toevoegen:hover {
+    background-color: rgb(40, 40, 40);
+}
+
 .toevoegen p {
     margin: 0 auto;
     position: relative;
     text-align: center;
     padding-top: 6px;
     font-size: 150%;
-    color: rgb(209, 209, 0);
-    font-family: "Rockwell", Georgia, serif;
-}
-
-.edit {
-    height: 40px;
-    width: 10%;
-    border: 2px solid rgb(60, 60, 60);
-    position: relative;
-    margin-top: 13px;
-    float: right;
-    margin-right: 13px;
-    background-color: rgb(60, 60, 60);
-}
-
-.edit p {
-    margin: 0 auto;
-    position: relative;
-    text-align: center;
-    padding-top: 6px;
-    font-size: 150%;
-    color: rgb(209, 209, 0);
+    color: rgb(0, 50, 255);
     font-family: "Rockwell", Georgia, serif;
 }
 
@@ -58,20 +48,20 @@ body {
     width: 98%;
     position: relative;
     margin: 0 auto;
-    background-color: rgb(128, 128, 128, 0.8);
+    background-color: rgb(40, 40, 40, 0.75);
 }
 
 .games {
     height: 300px;
     width: 15%;
-    background-color: white;
+
     margin: 10px 0px 0px 21px;
     float: left;
 }
 
 .game-image {
     width: 224px; /* Adjust the desired width */
-    height: 300px; /* Adjust the desired height */
+    height: 100%; /* Adjust the desired height */
 } 
 
 @media screen and (max-width: 1360px) {

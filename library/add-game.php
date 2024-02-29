@@ -50,7 +50,7 @@
 
                     <div id class="description"><input type='text' name='description' placeholder='Description:' required><br></div>
 
-                    <div id class="submit"><input type='submit' name='submit' value='submit'></div>
+                    <div id class="submit"><input type='submit' name='submit' value='SUBMIT'></div>
                 
             </form>
         </div>

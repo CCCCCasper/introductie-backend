@@ -59,9 +59,6 @@
                             <div id class="submit"><input type='submit' name='delete' value='DELETE'></div>
                     
                         </div>
-
-\
-
                 </form>
             </div>
     </div>
