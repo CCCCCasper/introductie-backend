@@ -2,7 +2,7 @@
 
 class GameManager {
 
-    private $conn;
+    private $db;
     private $title;
     private $developer;
     private $releasedate;
@@ -10,12 +10,12 @@ class GameManager {
     private $gameImage;
 
     public function __construct($dbConnection) {
-        $this->conn = $dbConnection;
+        $this->db = $dbConnection;
     }
 
     public function getAllGames() {
         $sql = "SELECT * FROM gamelibrary";
-        $result = $this->conn->query($sql);
+        $result = $this->db->conn->query($sql);
 
         if ($result->num_rows > 0) {
             $games = array();
@@ -28,16 +28,15 @@ class GameManager {
         }
     }
 
-    public function handleFormSubmission() {
-        if(isset($_POST['submit'])) {
-            $target_dir = "uploads/";
-            $target_file = $target_dir . basename($_FILES["afbeelding"]["name"]);
+    public function uploadImage($image) {
+            $target_dir = "./uploads/";
+            $target_file = $target_dir . basename($image["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         
-            $check = getimagesize($_FILES["afbeelding"]["tmp_name"]);
+            $check = getimagesize($image["tmp_name"]);
             if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
+          
                 $uploadOk = 1;
             } else {
                 echo "File is not an image.";
@@ -49,9 +48,9 @@ class GameManager {
                 echo "Sorry, file already exists.";
                 $uploadOk = 0;
             }
-        
+ 
             // Check file size
-            if ($_FILES["afbeelding"]["size"] > 5000000) {
+            if ($image["size"] > 5000000) {
                 echo "Sorry, your file is too large.";
                 $uploadOk = 0;
             }
@@ -67,23 +66,12 @@ class GameManager {
             if ($uploadOk == 0) {
                 echo "Sorry, your file was not uploaded.";
             } else {
-                if (move_uploaded_file($_FILES["afbeelding"]["tmp_name"], $target_file)) {
-                    echo "The file ". htmlspecialchars( basename( $_FILES["afbeelding"]["name"])). " has been uploaded.";
-        
-                    // Insert form data into the database
-                    $this->title = $_POST['title'];
-                    $this->developer = $_POST['developer'];
-                    $this->releasedate = $_POST['releasedate'];
-                    $this->description = $_POST['description'];
-                    $this->gameImage = $_FILES["afbeelding"]['name'];
-        
-                    // You might want to perform database insertion here
-                    // Example: $this->insertGameData();
+                if (move_uploaded_file($image["tmp_name"], $target_file)) {
+                   
                 } else {
                     echo "Sorry, there was an error uploading your file.";
                 }
             }
-        }
     }
 
     public function setTitle($title) {
@@ -93,6 +81,19 @@ class GameManager {
     public function getTitle() {
         return $this->title;
     }
+
+    public function addNewGame($title, $developer, $publisher, $releasedate, $description, $gameImage) {
+
+        $sql = "INSERT INTO gamelibrary (title, developer, publisher, releasedate, description, gameimage)
+                VALUES ('$title', '$developer', '$publisher', '$releasedate', '$description', '$gameImage')";
+        if($this->db->conn->query($sql)) {
+            header("Location: index .php");
+        } else {
+            echo "ERROR";
+        }
+    }
+
+    
 
     // Other methods for interacting with game data
 }

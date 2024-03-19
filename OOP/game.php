@@ -86,6 +86,8 @@ class Game {
         }
     }
 
+
+
     public function setTitle($title) {
         $this->title = $title;
     }
@@ -93,6 +95,39 @@ class Game {
     public function getTitle() {
         return $this->title;
     }
+
+    public function update() {
+        
+        $sql = "UPDATE gamelibrary SET title='$title', developer='$developer', publisher='$publisher', releasedate='$releasedate', description='$description', gameimage='$gameImage' WHERE id=$id";
+        
+        if ($this->db->conn->query($sql) === TRUE) {
+            echo "Record updated successfully";
+            header('Location: index.php');
+        } else {
+            echo "Error updating record: " . $conn->error;
+        }
+        
+
+
+    }
+    
+    public function delete() {
+        if (isset($_POST['delete'])) {
+        
+            $id = $_POST['id'];
+        
+            
+            $sql = "DELETE FROM gamelibrary WHERE id=$id";
+        
+            if ($conn->query($sql) === TRUE) {
+                echo "Record deleted successfully";
+                header('Location: index.php');
+            } else {
+                echo "Error deleting record: " . $conn->error;
+            }
+        }
+    }
+    
 
     // Other methods for interacting with game data
 }

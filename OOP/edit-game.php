@@ -4,16 +4,41 @@
     <link rel="stylesheet" type="text/css" href="edit-game.css">
 
     <title>Add Game</title>
+
+    <?php
+        require 'database.php';
+        require 'game.php';
+        require 'gameManager.php';
+
+        if (isset($_POST['update'])) {
+        
+            $id = $_POST['id'];
+            $title = $_POST['title'];
+            $developer = $_POST['developer'];
+            $publisher = $_POST['publisher'];
+            $releasedate = $_POST['releasedate'];
+            $description = $_POST['description'];
+            $gameImage = $_FILES["afbeelding"]['name'];
+        }
+
+
+    ?>
+
+
+
+
+
+
 </head>
 <body>
    
     <div id="menu">
-        <a href="library.php"><div id class="library"><p>LIBRARY</p></div></a>
+        <a href="index.php"><div id class="library"><p>LIBRARY</p></div></a>
     </div>
 
     <div id="container">
             <div id class="info">
-                <form method="POST" action="./update.php" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data">
 
                     <label for="customFileInput" class="custom-file-input">
                     <div id class="afbeelding"><input type="file" id="customFileInput" class="afbeelding" name="afbeelding" accept="image/*"></div>
@@ -52,7 +77,7 @@
 
                             <div id class="description"><input type='text' name='description' placeholder='Description:'><br></div>
 
-                            <div id class="description"><input type='text' style='display:none;' name='id' value='<?php echo $_GET['id']; ?>'>
+                            <div id class="description"><input type='text' name='id' value='<?php echo $_GET['id']; ?>'>
 
                             <div id class="submit"><input type='submit' name='update' value='UPDATE'></div>
 
@@ -63,9 +88,7 @@
             </div>
     </div>
     <?php
-        require 'database.php';
-        require 'game.php';
-        require 'gameManager.php';
+
     ?>
 </body>
 </html>

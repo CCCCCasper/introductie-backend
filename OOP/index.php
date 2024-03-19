@@ -12,31 +12,32 @@
         <a href="add-game.php"><div id class="toevoegen"><p>ADD GAME</p></div></a>
     </div>
 
-    <div id="container"></div>
+    <div id="container">
 
-    <?php
+        <?php
 
-        require 'database.php';
-        require 'game.php';
-        require 'gameManager.php';
-
-        spl_autoload_register(function ($class_name) {
-        });
-
-        // DATABASE KLASSE
-        $db = new Database();
-        $db->connectDatabase();
-
-        // GAMEMANAGER KLASSE
-        $gameManager = new GameManager();
-        $dataArray = $gameManager->dataToArray($result);
+            require 'database.php';
+            require 'game.php';
+            require 'gameManager.php';
 
 
-        foreach ($dataArray as $gameData) {
-            echo "<div class='game'>" . $gameObject->getTitle() . "</div>";
-        }
 
-    ?>
+            // DATABASE KLASSE
+            $db = new Database();
+            // GAMEMANAGER KLASSE
+            $gameManager = new GameManager($db);
+
+            $resultArray = $gameManager->getAllGames();
+
+            forEach($resultArray as $game) {
+
+                echo "<a href='edit-game.php?id=".$game['id']."'><div id class='games'><img class='game-image' src='uploads/".$game['gameimage']."'></div></a>";
+                
+            }
+
+        ?>
+
+    </div>
 
 </body>
 </html>

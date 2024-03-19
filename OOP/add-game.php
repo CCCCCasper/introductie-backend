@@ -19,7 +19,9 @@
             $publisher = $_POST['publisher'];
             $releasedate = $_POST['releasedate'];
             $description = $_POST['description'];
-            $gameImage = $_FILES['afbeelding'];
+            $gameImage = $_FILES['afbeelding']['name'];
+
+            $gameManager->uploadImage($_FILES['afbeelding']);
 
             $gameManager->addNewGame($title, $developer, $publisher, $releasedate, $description, $gameImage);
         }

@@ -1,4 +1,3 @@
-<!-- 1 -->
 <?php
 
     require_once 'dbConnect.php';
