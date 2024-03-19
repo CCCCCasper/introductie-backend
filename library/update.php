@@ -1,3 +1,4 @@
+<!-- 1 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,6 @@
 <?php
 require_once 'dbConnect.php';      
 
-// Check if the ID is set in the URL
 if (isset($_POST['update'])) {
     
     $id = $_POST['id'];

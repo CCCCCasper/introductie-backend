@@ -1,29 +1,28 @@
 <?php
 
-    class Database {
+class Database {
 
-        $serverName = "localhost";
-        $userName = "root";
-        $password = "";
-        $dbName = "games2";
+    public $serverName = "localhost";
+    public $userName = "root";
+    public $password = "";
+    public $dbName = "games2";
+    public $conn;
 
-        public function cennectDatabase() {
+    public function __construct() {
+        $this->conn = new mysqli($this->serverName, $this->userName, $this->password, $this->dbName);
 
-            $this->conn = new mysqli($serverName, $userName, $password, $dbName);
-
-            if ($this->conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
         }
+
     }
 
     public function getData() {
 
-        $sql = "SELECT * FROM library";
+        $sql = "SELECT * FROM gamelibrary";
         $result = $this->conn->query($sql);
-
-
         return $result;
+        
     }
+}
 ?>

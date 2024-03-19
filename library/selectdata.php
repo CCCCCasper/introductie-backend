@@ -1,3 +1,4 @@
+<!-- 1 -->
 <!DOCTYPE html>
 <html>
 <body>
@@ -6,7 +7,7 @@
 
 require_once 'dbConnect.php';
 
-// Check if the id is set, for example, from a GET or POST request
+
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
 
