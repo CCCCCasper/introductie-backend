@@ -28,6 +28,17 @@ class GameManager {
         }
     }
 
+    public function getGameById($id) {
+        $sql = "SELECT * FROM gamelibrary WHERE id = $id";
+        $result = $this->db->conn->query($sql);
+
+        if ($result && $result->num_rows > 0) {
+            return $result->fetch_assoc();
+        } else {
+            return null;
+        }
+    }
+
     public function uploadImage($image) {
             $target_dir = "./uploads/";
             $target_file = $target_dir . basename($image["name"]);
@@ -87,7 +98,7 @@ class GameManager {
         $sql = "INSERT INTO gamelibrary (title, developer, publisher, releasedate, description, gameimage)
                 VALUES ('$title', '$developer', '$publisher', '$releasedate', '$description', '$gameImage')";
         if($this->db->conn->query($sql)) {
-            header("Location: index .php");
+            header("Location: index.php");
         } else {
             echo "ERROR";
         }

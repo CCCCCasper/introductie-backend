@@ -2,7 +2,7 @@
 
 class Game {
 
-    private $conn;
+    private $db;
     private $title;
     private $developer;
     private $releasedate;
@@ -10,7 +10,7 @@ class Game {
     private $gameImage;
 
     public function __construct($dbConnection) {
-        $this->conn = $dbConnection;
+        $this->db = $dbConnection;
     }
 
     public function getAllGames() {
@@ -30,7 +30,7 @@ class Game {
 
     public function handleFormSubmission() {
         if(isset($_POST['submit'])) {
-            $target_dir = "uploads/";
+            $target_dir = "./uploads/";
             $target_file = $target_dir . basename($_FILES["afbeelding"]["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -87,16 +87,11 @@ class Game {
     }
 
 
-
-    public function setTitle($title) {
-        $this->title = $title;
-    }
-
     public function getTitle() {
         return $this->title;
     }
 
-    public function update() {
+    public function update($id, $title, $developer, $publisher, $releasedate, $description, $gameImage) {
         
         $sql = "UPDATE gamelibrary SET title='$title', developer='$developer', publisher='$publisher', releasedate='$releasedate', description='$description', gameimage='$gameImage' WHERE id=$id";
         
@@ -111,21 +106,17 @@ class Game {
 
     }
     
-    public function delete() {
-        if (isset($_POST['delete'])) {
-        
-            $id = $_POST['id'];
-        
+    public function delete($id) {
             
-            $sql = "DELETE FROM gamelibrary WHERE id=$id";
+        $sql = "DELETE FROM gamelibrary WHERE id=$id";
         
-            if ($conn->query($sql) === TRUE) {
-                echo "Record deleted successfully";
-                header('Location: index.php');
-            } else {
-                echo "Error deleting record: " . $conn->error;
-            }
+        if ($this->db->conn->query($sql) === TRUE) {
+            echo "Record deleted successfully";
+            header('Location: index.php');
+        } else {
+            echo "Error deleting record: " . $conn->error;
         }
+        
     }
     
 
